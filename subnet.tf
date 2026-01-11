@@ -1,9 +1,3 @@
-# Author    : Ranjit Kumar Swain
-# Web       : www.ranjitswain.com
-# YouTube   : https://www.youtube.com/c/ranjitswain
-# GitHub    : https://github.com/ranjit4github
-########################################################
-
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.cidr[count.index]
@@ -11,7 +5,7 @@ resource "aws_subnet" "public" {
   count = 2
 
   tags = {
-    Name = "public-sub"
+    Name = "public-sub_!"
   }
 }
 
@@ -21,11 +15,11 @@ resource "aws_subnet" "private" {
   availability_zone = "ap-south-1b"
 
   tags = {
-    Name = "private-sub3"
+    Name = "private-sub3_1"
   }
 }
 
-data "aws_subnets" "sid" {
+data "aws_subnets" "sid_1" {
   filter {
     name   = "vpc-id"
     values = [aws_vpc.main.id]

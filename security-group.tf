@@ -1,11 +1,6 @@
-# Author    : Ranjit Kumar Swain
-# Web       : www.ranjitswain.com
-# YouTube   : https://www.youtube.com/c/ranjitswain
-# GitHub    : https://github.com/ranjit4github
-########################################################
 
 resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+  name        = "allow_tls_1"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.main.id
 
@@ -33,12 +28,12 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "allow_tls_1"
   }
 }
 
 resource "aws_security_group" "allow_tls_db" {
-  name        = "allow_tls_db"
+  name        = "allow_tls_db_1"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.main.id
 
@@ -66,6 +61,6 @@ resource "aws_security_group" "allow_tls_db" {
   }
 
   tags = {
-    Name = "allow_tls_db"
+    Name = "allow_tls_db_1"
   }
 }

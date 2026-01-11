@@ -8,7 +8,7 @@ resource "aws_instance" "web" {
   count = 2
 
   tags = {
-    Name = "WebServer"
+    Name = "WebServer - 1"
   }
 
   provisioner "file" {
@@ -32,6 +32,6 @@ resource "aws_instance" "db" {
   vpc_security_group_ids = [aws_security_group.allow_tls_db.id]
 
   tags = {
-    Name = "DB Server"
+    Name = "DB Server_1"
   }
 }
